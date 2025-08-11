@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Fale Inglês com Confiança</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f6f8fb; color:#222; }
+        header { background: linear-gradient(90deg,#0056b3,#007bff); color:#fff; text-align:center; padding:2.5rem 1rem; }
+        header h1 { margin:0; font-size:1.8rem; line-height:1.2; }
+        header p { margin:8px 0 0; opacity:0.95; }
+        .container { max-width:960px; margin:20px auto; padding:20px; }
+        .grid { display:grid; grid-template-columns: 1fr 360px; gap:20px; align-items:start; }
+        @media (max-width:880px) { .grid { grid-template-columns: 1fr; } }
+        .leadbox { background:#fff; padding:20px; border-radius:10px; box-shadow:0 6px 20px rgba(20,40,80,0.08); }
+        .benefits { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:16px; }
+        .benefit { background:#fff; padding:14px; border-radius:8px; box-shadow:0 2px 8px rgba(20,40,80,0.04); }
+        .offer { background:linear-gradient(90deg,#ff7a00,#ff4d4d); color:#fff; padding:14px; border-radius:8px; text-align:center; margin-top:12px; }
+        form { display:flex; flex-direction:column; gap:10px; }
+        input, select, button, textarea { width:100%; padding:12px; border-radius:8px; border:1px solid #e2e8f0; font-size:1rem; box-sizing:border-box; }
+        button { background:#28a745; color:#fff; border:none; cursor:pointer; font-weight:700; }
+        button:hover { opacity:0.95; transform:translateY(-1px); transition:all .12s ease; }
+        .testimonials { margin-top:20px; }
+        .testimonial { background:#fff; padding:12px; border-radius:8px; margin-bottom:10px; box-shadow:0 2px 8px rgba(20,40,80,0.04); }
+        .small { font-size:0.9rem; color:#555; }
+        .cta-ghost { background:transparent; border:2px solid #007bff; color:#007bff; padding:10px; border-radius:8px; font-weight:700; cursor:pointer; }
+        footer { text-align:center; padding:18px 8px; color:#666; font-size:0.9rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fale inglês com confiança e abra portas para sua carreira e viagens</h1>
+        <p>Aulas online ao vivo, método prático e adaptado à sua rotina.</p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <div>
+                <div class="leadbox">
+                    <h2>Transforme seu futuro com o inglês</h2>
+                    <p class="small">Método simples, prático e direto — mesmo que você comece do zero.</p>
+
+                    <div class="benefits" aria-hidden="true">
+                        <div class="benefit">📍 Estude de qualquer lugar</div>
+                        <div class="benefit">👩‍🏫 Aulas ao vivo com professores reais</div>
+                        <div class="benefit">💬 Conversação desde a primeira aula</div>
+                        <div class="benefit">🕒 Horários flexíveis</div>
+                    </div>
+
+                    <div class="offer" role="note">
+                        <strong>Oferta especial desta semana:</strong><br />
+                        Até <strong>50% de desconto</strong> na matrícula + módulo bônus <em>Inglês para Viagens</em>.<br />
+                        <span class="small">Vagas limitadas até <strong>[Data X]</strong>.</span>
+                    </div>
+
+                    <div style="margin-top:14px;">
+                        <p class="small"><strong>Garanta sua vaga com desconto:</strong></p>
+                        <form id="leadForm" action="#" method="POST" onsubmit="return submitForm(event)">
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                            <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="WhatsApp (ex: +55 11 9XXXX-XXXX)" required>
+                            <select id="objetivo" name="objetivo" required>
+                                <option value="">Por que você quer aprender inglês?</option>
+                                <option value="carreira">Carreira</option>
+                                <option value="viagens">Viagens</option>
+                                <option value="estudos">Estudos</option>
+                                <option value="negocios">Negócios</option>
+                            </select>
+                            <textarea id="mensagem" name="mensagem" placeholder="Queremos saber: qual seu maior objetivo com o inglês?" rows="3"></textarea>
+
+                            <button type="submit">Quero minha vaga com desconto</button>
+                            <button type="button" class="cta-ghost" onclick="openWhatsApp()">Falar agora pelo WhatsApp</button>
+                        </form>
+                        <p id="formMsg" class="small" style="margin-top:8px; display:none;"></p>
+                    </div>
+                </div>
+
+                <div class="testimonials" aria-live="polite">
+                    <h3 style="margin-top:18px;">O que nossos alunos dizem</h3>
+                    <div class="testimonial">“Fechei contrato com cliente internacional após 5 meses.” – Carlos, 34 anos</div>
+                    <div class="testimonial">“Viajei para os EUA e consegui me virar sozinha pela primeira vez.” – Fernanda, 27 anos</div>
+                    <div class="testimonial">“Consegui promoção no trabalho porque passei a atender clientes de fora.” – Mariana, 31 anos</div>
+                </div>
+            </div>
+
+            <aside>
+                <div class="leadbox" style="text-align:center;">
+                    <h3>Por que escolher este método?</h3>
+                    <p class="small">Foco em conversação, planejamento personalizado e professores que realmente ensinam a falar.</p>
+                    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Aluno em videochamada" style="width:100%;border-radius:8px;margin-top:10px;">
+                    <div style="margin-top:12px; text-align:left;">
+                        <ul class="small">
+                            <li>Matrículas abertas: próximas turmas em [Data]</li>
+                            <li>Professores com experiência real</li>
+                            <li>Suporte próximo e materiais práticos</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <div>© 2025 — Programa de Inglês Online. <span class="small">Política de Privacidade • Termos</span></div>
+    </footer>
+
+    <script>
+        function openWhatsApp(){
+            var nome = document.getElementById('nome').value || 'Interessado';
+            var whatsappNumber = '+5511999999999'; // replace with your number (include country code)
+            var msg = encodeURIComponent('Olá! Sou ' + nome + ' e quero garantir a vaga com desconto. Me fale mais, por favor.');
+            window.open('https://wa.me/' + whatsappNumber.replace(/\D/g,'') + '?text=' + msg, '_blank');
+        }
+
+        function submitForm(e){
+            e.preventDefault();
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var whatsapp = document.getElementById('whatsapp').value;
+            var objetivo = document.getElementById('objetivo').value;
+            var mensagem = document.getElementById('mensagem').value;
+
+            // Placeholder: here you should connect to your CRM or endpoint (Zapier, Pipedrive, RD Station, etc.)
+            // For demo, we'll just show a success message and log to console.
+
+            document.getElementById('formMsg').style.display = 'block';
+            document.getElementById('formMsg').innerText = 'Obrigado, ' + nome + '! Recebemos sua solicitação. Aguarde contato no WhatsApp.';
+            document.getElementById('leadForm').reset();
+
+            console.log('LEAD CAPTURED:', {nome, email, whatsapp, objetivo, mensagem});
+            return false;
+        }
+    </script>
+</body>
+</html>
